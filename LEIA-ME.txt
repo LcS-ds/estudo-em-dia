@@ -1,0 +1,18 @@
+ESTUDO EM DIA — projeto de Programação Web I
+
+Abra index.html em um navegador moderno. Uma conexão à internet permite carregar
+Day.js, SortableJS, SweetAlert2 e Fuse.js pelas CDNs.
+Se alguma CDN estiver bloqueada, o organizador continua funcionando: usa datas
+do navegador, arraste nativo, confirmação padrão e busca simples. A tolerância
+a pequenos erros de digitação depende do carregamento da Fuse.js.
+As tarefas são guardadas no armazenamento local do navegador.
+
+Como demonstrar:
+1. Adicione uma tarefa e escolha a data.
+2. Arraste uma tarefa pelo ícone de linhas.
+3. Marque uma tarefa como concluída.
+4. Exclua uma tarefa e veja a confirmação.
+5. Pesquise uma tarefa pelo nome, inclusive com um pequeno erro de digitação.
+   Limpe a busca para voltar a arrastar e reorganizar tarefas.
+
+Arquivos: index.html, styles.css e app.js.

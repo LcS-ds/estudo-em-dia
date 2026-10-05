@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171e37">
+  <title>Estudo em Dia — organizador de tarefas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/sortablejs@1/Sortable.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/fuse.js@7.5.0/dist/fuse.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Estudo em Dia, início"><span class="brand-mark">E<span>.</span></span><span>estudo em dia</span></a>
+      <span class="header-note">Seu plano de estudos, no seu ritmo.</span>
+    </header>
+
+    <main id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">ORGANIZAÇÃO SEM COMPLICAÇÃO</p>
+          <h1 id="hero-title">Uma tarefa de cada vez.<br><em>Você chega lá.</em></h1>
+          <p class="hero-subtitle">Anote o que precisa fazer, escolha um prazo e arraste as tarefas para definir sua prioridade.</p>
+          <a class="hero-link" href="#planejamento">Montar meu plano <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="hero-disc"><span>01</span><strong>comece<br>agora</strong></div>
+          <div class="art-star star-one">✳</div><div class="art-star star-two">✳</div>
+        </div>
+      </section>
+
+      <section class="workspace" id="planejamento" aria-labelledby="workspace-title">
+        <div class="workspace-heading">
+          <div><p class="eyebrow dark">SEU ESPAÇO</p><h2 id="workspace-title">Plano de estudos</h2></div>
+          <p id="today-label" class="today-label"></p>
+        </div>
+        <div class="content-grid">
+          <section class="composer" aria-labelledby="composer-title">
+            <h3 id="composer-title">Adicionar tarefa</h3>
+            <p class="section-help">Transforme uma meta grande em um próximo passo possível.</p>
+            <form id="task-form">
+              <label for="task-name">O que você vai fazer?</label>
+              <input id="task-name" name="task" type="text" maxlength="90" placeholder="Ex.: Revisar equações" autocomplete="off" required>
+              <label for="task-date">Até quando?</label>
+              <input id="task-date" name="date" type="date" required>
+              <button type="submit" class="primary-button">Adicionar ao plano <span aria-hidden="true">＋</span></button>
+            </form>
+            <div class="tip"><span aria-hidden="true">✦</span><p>Dica: use o ícone de linhas para mudar a ordem das tarefas.</p></div>
+          </section>
+
+          <section class="task-panel" aria-labelledby="tasks-title">
+            <div class="task-panel-head"><div><h3 id="tasks-title">Minhas tarefas</h3><p id="task-count" class="task-count"></p></div><button id="clear-done" class="text-button" type="button">Limpar concluídas</button></div>
+            <div class="filters" role="group" aria-label="Filtrar tarefas"><button class="filter active" type="button" data-filter="all" aria-pressed="true">Todas</button><button class="filter" type="button" data-filter="pending" aria-pressed="false">Pendentes</button><button class="filter" type="button" data-filter="done" aria-pressed="false">Concluídas</button></div>
+            <label class="search-label" for="task-search">Buscar tarefas</label>
+            <input id="task-search" class="task-search" type="search" placeholder="Ex.: revisar matemática" autocomplete="off" aria-controls="task-list">
+            <p class="search-help">Limpe a busca para reorganizar as tarefas.</p>
+            <ul id="task-list" class="task-list" aria-live="polite"></ul>
+            <p id="empty-state" class="empty-state" hidden>Nenhuma tarefa neste filtro. Que tal adicionar uma?</p>
+            <p class="list-footnote">As tarefas ficam salvas neste navegador.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="how-it-works" aria-labelledby="how-title">
+        <p class="eyebrow dark">POR TRÁS DA PÁGINA</p>
+        <h2 id="how-title">Quatro bibliotecas, quatro funções</h2>
+        <div class="library-list"><p><strong>Day.js</strong><span>formata os prazos e calcula os dias restantes.</span></p><p><strong>SortableJS</strong><span>permite arrastar tarefas para reorganizar a lista.</span></p><p><strong>SweetAlert2</strong><span>mostra mensagens e confirma a exclusão das concluídas.</span></p><p><strong>Fuse.js</strong><span>encontra tarefas mesmo com pequenos erros de digitação.</span></p></div>
+      </section>
+    </main>
+    <footer><span>Estudo em Dia</span><span>Projeto de Programação Web I</span></footer>
+  </div>
+</body>
+</html>
